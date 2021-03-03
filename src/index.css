@@ -1,13 +1,196 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-image: linear-gradient(62deg, rgba(1, 95, 183, 0.9732216701223994) 13%, rgba(255, 122, 151, 0.5) 4%),linear-gradient(44deg, rgba(0, 43, 99, 0.07922090238615942) 39%, rgba(242, 140, 143, 0.5) 18%),linear-gradient(118deg, rgba(84, 202, 242, 0.03152997265339608) 40%, rgba(247, 155, 187, 0.5) 54%),linear-gradient(58deg, rgba(90, 90, 237, 0.16144443572260592) 83%, rgba(249, 156, 142, 0.5) 23%); 
+  background-blend-mode: normal,lighten,multiply,hard-light;
+  overflow: hidden;
+  height: 100vh;
+
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'DM Sans', sans-serif;
+}
+
+.container {
+  width: 480px;
+  max-height: 100%;
+}
+
+.task-container {
+  width: 100%;
+  padding: 25px;
+  margin: 0 auto;
+
+  /* background-color: #35355f; */
+  background-color: #10101d;
+  border-radius: 8px;
+}
+
+.header-title {
+  font-size: 20px;
+  line-height: 32px;
+  margin: 0 0 20px 0;
+
+  color: #fff;
+  text-transform: uppercase;
+}
+
+
+.task {
+  height: 40px;
+  font-size: 14px;
+
+  display: flex;
+}
+
+
+
+.task-input {
+  width: 100%;
+  padding: 0 5px;
+  margin-right: 12px;
+  font-size: 16px;
+
+  border: none;
+  border-bottom: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+}
+
+.task-input:placeholder {
+  color: #fff;
+  font-size: 16px;
+}
+
+.task-submit {
+  width: 40px;
+  height: 35px;
+
+  background-color: #ee9ca7;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+
+
+.btn {
+  position: relative;
+}
+
+
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 20px;
+  height: 2px;
+  
+}
+
+.btn::before {
+  top: 17px;
+  left: -27px;
+}
+
+.btn::after {
+  top: 17px;
+  left: -27px;
+  transform: rotate(90deg);
+}
+
+
+
+.task-table {
+  height: 100%;
+  width: 100%;
+}
+
+.task-list {
+  list-style: none;
+  color: #fff;
+  border-radius: 4px;
+  margin: 12px 0;
+  padding: 8px;
+}
+
+.task-list-item {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 5px;
+
+  background-color: #191933;
+}
+
+.task-list-btn {
+  margin-left: auto;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ff3d46' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-trash-2'%3E%3Cpolyline points='3 6 5 6 21 6'/%3E%3Cpath d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'/%3E%3Cline x1='10' y1='11' x2='10' y2='17'/%3E%3Cline x1='14' y1='11' x2='14' y2='17'/%3E%3C/svg%3E");
+  background-size: 16px;
+  background-position: center;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.custom-checkbox + label::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  margin-right: 8px;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+/* .custom-checkbox:checked + label::before */
+
+.custom-checkbox:checked + label::before {
+  border-color: #ee9ca7;
+  background-color: #ee9ca7;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #ee9ca7;
+  box-shadow: 0 0 0 3px rgba(238, 156, 167, 0.2);
+}
+
+
+.custom-checkbox:checked + label:hover::before {
+  box-shadow: 0 0 0 3px rgba(238, 156, 167, 0.2);
+}
+
+.custom-checkbox:checked + .check-label {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: line-through rgba(255, 255, 255, 0.8);
+
+  transition: all .5s linear;
 }
