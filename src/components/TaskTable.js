@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import TaskItem from './TaskItem';
 
 const TaskTable = ({ tasks, handleDelete }) => {
@@ -10,12 +8,12 @@ const TaskTable = ({ tasks, handleDelete }) => {
   // Если хочешь хранить состояние именно здесь, то здесь тебе нужно хранить объект,
   // где по индексу элемента ты будешь сохранять checked он или нет
   // например: { [taskId]: true, [taskId]: false },
-  const [checked, setChecked] = useState(false);
+  // const [checked, setChecked] = useState(false);
 
-  const handleChange = (event) => {
-    setChecked(!checked);
-    console.log(event.target.id);
-  };
+  // const handleChange = (event) => {
+  //   setChecked(!checked);
+  //   console.log(event.target.id);
+  // };
 
   return (
     <div className="task-table">

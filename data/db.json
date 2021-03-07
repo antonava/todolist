@@ -1,16 +1,12 @@
 {
   "tasks": [
     {
-      "taskName": "Call the police",
-      "id": 4
-    },
-    {
-      "taskName": "Go crazy",
-      "id": 5
-    },
-    {
       "taskName": "Cooking bulochki",
       "id": 6
+    },
+    {
+      "taskName": "Go potrenkat",
+      "id": 7
     }
   ]
 }

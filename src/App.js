@@ -1,4 +1,4 @@
-import TaskInput from './components/TaskInput';
+import TaskContainer from "./components/TaskContainer";
 
 function App() {
   return (
@@ -6,7 +6,7 @@ function App() {
       <div className="task-container">
         <h1 className="header-title">To Do List</h1>
         {/** TODO: Сюда лучше вставляей компонент контейнер, например TaskContainer (подробности смотри в TaskInput) */}
-        <TaskInput />
+        <TaskContainer />
       </div>
     </div>
   );

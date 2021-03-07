@@ -3,7 +3,7 @@ import { useState } from 'react';
 const TaskItem = ({ task, handleDelete }) => {
   const [checked, setChecked] = useState(false);
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     setChecked((prevState) => !prevState);
   };
 
@@ -31,7 +31,7 @@ const TaskItem = ({ task, handleDelete }) => {
         onChange={handleChange}
       />
       <label htmlFor={`checkbox-${task.id}`} className="check-label">
-        <span className="check-label-checkbox"></span>
+        <span className="check-label-checkbox" />
         <span className="check-label-text">{task.taskName}</span>
       </label>
       <span
