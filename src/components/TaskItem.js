@@ -9,20 +9,6 @@ const TaskItem = ({ task, handleDelete }) => {
 
   return (
     <li className="task-list-item" key={task.id}>
-      {/* <input
-        className="custom-checkbox"
-        type="checkbox"
-        id="checkbox"
-        checked={checked}
-        onChange={handleChange}
-      /> */}
-      {/** TODO: label c htmlFor привязывается к чекбоксу по id. У тебя у всех чекбоксов id одинаковый
-       * поэтому он зачеркивал всегда только первый элемент
-      */}
-      {/* <label htmlFor="checkbox" className="check-label">
-        <span className="check-label-checkbox"></span>
-        <span className="check-label-text">{task.taskName}</span>
-      </label> */}
       <input
         className="custom-checkbox"
         type="checkbox"
