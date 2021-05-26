@@ -8,15 +8,15 @@ const TaskItem = ({ task, handleDelete }) => {
   };
 
   return (
-    <li className="task-list-item" key={task.id}>
+    <li className="task-list-item" key={task._id}>
       <input
         className="custom-checkbox"
         type="checkbox"
-        id={`checkbox-${task.id}`}
+        id={`checkbox-${task._id}`}
         checked={checked}
         onChange={handleChange}
       />
-      <label htmlFor={`checkbox-${task.id}`} className="check-label">
+      <label htmlFor={`checkbox-${task._id}`} className="check-label">
         <span className="check-label-checkbox" />
         <span className="check-label-text">{task.taskName}</span>
       </label>

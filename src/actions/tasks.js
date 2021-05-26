@@ -29,9 +29,10 @@ export const sendTask = (payload) => async (dispatch) => {
 };
 
 export const deleteTask = (payload) => async (dispatch) => {
-    await fetch('http://localhost:8000/tasks/' + payload, {
+    await fetch('' + payload, {
         method: 'DELETE',
     });
+    console.log(payload);
 
     dispatch(removeTask(payload))
 };

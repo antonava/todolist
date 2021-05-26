@@ -8,8 +8,8 @@ const TaskTable = () => {
 
   const dispatch = useDispatch();
 
-  const handleDelete = (id) => {
-    dispatch(deleteTask(id));
+  const handleDelete = (_id) => {
+    dispatch(deleteTask(_id));
   };
 
   return (
@@ -17,9 +17,9 @@ const TaskTable = () => {
       <ul className="task-list">
         {tasks.map((task) => (
           <TaskItem
-            key={task.id}
+            key={task._id}
             task={task}
-            handleDelete={() => handleDelete(task.id)}
+            handleDelete={() => handleDelete(task._id)}
           />
         ))}
       </ul>

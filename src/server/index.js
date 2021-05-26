@@ -45,7 +45,6 @@ app.get('/all-tasks', (req, res) => {
 
 
 app.post('/all-tasks', (req, res) => {
-  // console.log(req.body);
   const task = new Task(req.body);
 
   task.save()
@@ -59,15 +58,14 @@ app.post('/all-tasks', (req, res) => {
 });
 
 
-// app.delete('/all-tasks/', (req, res) => {
-//   const id = req.param.id;
-//   console.log(id);
+app.delete('/all-tasks/', (req, res) => {
+  const id = req.id;
+  console.log(id);
 
-//   // Task.findByIdAndDelete(id) 
-//   //   .then((result) => {
-//   //     res.json();
-//   //   })
-//   //   .catch((err) => {
-//   //     console.log(err);
-//   //   });
-// })
+  Task.findByIdAndDelete(id)
+    .then((result) => {
+      res.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
