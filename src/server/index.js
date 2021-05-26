@@ -33,21 +33,6 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-
-// app.get('/add-task', (req, res) => {
-//   const task = new Task({
-//     taskName: 'Buy smth to eat'
-//   });
-
-//   task.save()
-//     .then((result) => {
-//       res.send(result)
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// });
-
 app.get('/all-tasks', (req, res) => {
   Task.find()
     .then((result) => {
@@ -86,12 +71,3 @@ app.post('/all-tasks', (req, res) => {
 //   //     console.log(err);
 //   //   });
 // })
-
-
-
-//get req на все данные в БД
-//post req на новую задачу
-
-//схема объекта задачи (title/id auto)
-
-   // "start": "react-scripts start & json-server --watch data/db.json --port 8000",
