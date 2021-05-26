@@ -6,8 +6,12 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "eslint": "^7.21.0",
+    "express": "^4.17.1",
     "json-server": "^0.16.3",
+    "mongoose": "^5.12.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
@@ -19,7 +23,9 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start & json-server --watch data/db.json --port 8000",
+    "start": "yarn start:client && yarn start:server",
+    "start:client": "react-scripts start",
+    "start:server": "node ./src/server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
