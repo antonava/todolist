@@ -11,14 +11,14 @@ export const {
 );
 
 export const fetchTasks = () => async (dispatch) => {
-    const res = await fetch('http://localhost:8000/tasks');
+    const res = await fetch('http://localhost:3001/all-tasks');
     const data = await res.json();
 
     dispatch(setTasks(data));
 };
 
 export const sendTask = (payload) => async (dispatch) => {
-    const res = await fetch('http://localhost:8000/tasks', {
+    const res = await fetch('http://localhost:3001/all-tasks', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ taskName: payload }),

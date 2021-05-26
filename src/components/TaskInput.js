@@ -22,13 +22,15 @@ const TaskInput = () => {
 
   return (
     <>
-      <form className="task" onSubmit={handleSubmit}>
+    {/* actions="/all-tasks" method="POST" */}
+      <form className="task" onSubmit={handleSubmit} >
         <input
           className="task-input"
           type="text"
           placeholder="Add New Task"
           value={taskName}
           onChange={handleChange}
+          name="taskName"
         />
         <input className="task-submit" type="submit" value="" required title="Add Task" />
         <span className="btn" />
