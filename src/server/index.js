@@ -18,9 +18,6 @@ const taskScheme = new Schema({
 //model
 const Task = mongoose.model('Task', taskScheme);
 
-//obj
-
-
 const dbURL = 'mongodb+srv://aantonava:271096N@todotasks.plzsa.mongodb.net/ToDoTasks?retryWrites=true&w=majority';
 mongoose.connect(dbURL, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
   .then(result => app.listen(PORT))
@@ -36,10 +33,10 @@ app.use(cors());
 app.get('/all-tasks', (req, res) => {
   Task.find()
     .then((result) => {
-      res.send(result)
+      res.send(result);
     })
     .catch((err) => {
-      console.log(err);
+      res.status(500).json({ message: err.message })
     });
 });
 
@@ -50,22 +47,20 @@ app.post('/all-tasks', (req, res) => {
   task.save()
     .then((result) => {
       res.send(result)
-    })
+     })
     .catch((err) => {
-      console.log(err);
+      res.status(400).json({ message: err.message })
     });
 
 });
 
 
-app.delete('/all-tasks/', (req, res) => {
-  const id = req.id;
-  console.log(id);
-
-  Task.findByIdAndDelete(id)
+app.delete('/all-tasks/:id', (req, res) => {
+   Task.findByIdAndDelete({ _id: req.params.id})
     .then((result) => {
-      res.json();
+      res.json(result)
     })
     .catch((err) => {
-      console.log(err);
-    });
+      res.status(400).json({ message: err.message })
+   });
+}); 

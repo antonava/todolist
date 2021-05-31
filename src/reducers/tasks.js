@@ -27,8 +27,9 @@ export const tasks = handleActions(
         }),
         [removeTask]: (state, { payload }) => ({
             ...state,
-            tasks: state.tasks.filter((task) => task.id !== payload)
+            tasks: state.tasks.filter((task) => task._id !== payload)
         }),
     },
     initState,
 );
+

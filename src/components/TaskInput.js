@@ -22,7 +22,6 @@ const TaskInput = () => {
 
   return (
     <>
-    {/* actions="/all-tasks" method="POST" */}
       <form className="task" onSubmit={handleSubmit} >
         <input
           className="task-input"

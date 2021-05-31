@@ -24,7 +24,8 @@ const TaskItem = ({ task, handleDelete }) => {
         className="task-list-btn"
         title="Delete"
         onClick={handleDelete}
-      ></span>
+      >
+      </span>
     </li>
   );
 };
