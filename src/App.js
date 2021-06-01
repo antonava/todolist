@@ -1,6 +1,6 @@
 import React from 'react';
-// eslint-disable-next-line import/no-unresolved
-import TaskContainer from './components/TaskContainer';
+
+import TaskContainer from './components/task-container';
 
 function App() {
   return (
