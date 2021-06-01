@@ -1,7 +1,8 @@
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { deleteTask } from '../actions/tasks';
-import TaskItem from './TaskItem';
+import TaskItem from './task-item';
 
 const TaskTable = () => {
   const { tasks } = useSelector(state => state.tasks);

@@ -1,15 +1,14 @@
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { sendTask } from '../actions/tasks';
 
 const TaskInput = () => {
   const [taskName, setTaskName] = useState('');
-  const tasks = useSelector(state => state.tasks);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    setTaskName(e.target.value)
+    setTaskName(e.target.value);
   };
 
   const handleSubmit = (e) => {

@@ -1,9 +1,11 @@
-import { useState } from 'react';
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const TaskItem = ({ task, handleDelete }) => {
   const [checked, setChecked] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = () => {
     setChecked((prevState) => !prevState);
   };
 
@@ -28,6 +30,12 @@ const TaskItem = ({ task, handleDelete }) => {
       </span>
     </li>
   );
+};
+
+TaskItem.PropTypes = {
+  task: PropTypes.array.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+  taskName: PropTypes.string.isRequired,
 };
 
 export default TaskItem;

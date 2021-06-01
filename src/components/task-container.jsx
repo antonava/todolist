@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { fetchTasks } from '../actions/tasks';
-import TaskInput from './TaskInput';
-import TaskTable from './TaskTable';
+import TaskInput from './task-input';
+import TaskTable from './task-table';
 
 const TaskContainer = () => {
   const dispatch = useDispatch();
@@ -18,6 +18,6 @@ const TaskContainer = () => {
       <TaskTable />
     </div>
   );
-}
+};
 
 export default TaskContainer;
